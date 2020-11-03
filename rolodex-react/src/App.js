@@ -18,13 +18,20 @@ class App extends React.Component {
     .then(resp=>resp.json())
     .then(allPeople => this.setState({allPeople}))
   }
+
+  addPerson = (newPerson) => {
+    console.log(newPerson)
+    this.setState({
+      allPeople: [...this.state.allPeople, newPerson]
+    })
+  }
   render() {
     return (
       <div className="App">
         <Header />
         <SearchBar />
-        <CardBox />
-        <Form />
+        <CardBox people={this.state.allPeople}/>
+        <Form addPerson = {this.addPerson}/>
       </div>
     );
   }

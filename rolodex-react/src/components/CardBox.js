@@ -5,7 +5,11 @@ const CardBox = (props) =>{
     return (
         <div class="row">
         <div id ="people" className="container col-8 d-flex p-4" style={{flexWrap: 'wrap'}}>
-            <Card/>
+            {/* since its the container, we want to map through the array */}
+            {/* pass down data to the card components */}
+            {props.people.map(peep=> {
+                return(<Card peep={peep}/>)
+            })}
         </div>
         </div>
     )
