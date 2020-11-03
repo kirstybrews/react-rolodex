@@ -8,7 +8,7 @@ const CardBox = (props) =>{
             {/* since its the container, we want to map through the array */}
             {/* pass down data to the card components */}
             {props.people.map(peep=> {
-                return(<Card peep={peep}/>)
+                return(<Card peep={peep} editPerson={props.editPerson}/>)
             })}
         </div>
         </div>
